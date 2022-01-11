@@ -24,8 +24,10 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
+    return MaterialApp(
+      home: MultiProvider(
+          providers: [ChangeNotifierProvider(create: (_) => Counter())],
+          child: MyHomePage()),
     );
   }
 }
